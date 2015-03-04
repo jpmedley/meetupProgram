@@ -3,11 +3,11 @@ var CACHE_VERSION = 1;
 var CURRENT_CACHES = {
   meetup-data: 'meetup-cache-v' + CACHE_VERSION
 };
+var API_ORIGIN = "https://api.meetup.com"
 
 self.addeventlistener('install', function(event) {
   var urlsToPrefetch = [
-    'someurl',
-    'otherurl'
+    API_ORIGIN + '/dashboard'
   ]
   
   event.waitUntil(
