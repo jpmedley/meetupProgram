@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="description" content="Sample of pre-fetching resources during service worker registration.">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Mobile Meetup</title>
+
+    <script src="meetup-client.js"></script>
+    <script>
+      // Service workers require HTTPS (http://goo.gl/lq4gCo). If we're running on a real web server
+      // (as opposed to localhost on a custom port, which is whitelisted), then change the protocol to HTTPS.
+      if ((!location.port || location.port == "80") && location.protocol != 'https:') {
+        location.protocol = 'https:';
+      }
+    </script>
+  </head>
+
+  <body>
+    <h1>Mobile Meetup</h1>
+    <p>Content here.</p>
+  </body>
+</html>
