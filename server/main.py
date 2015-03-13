@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import json
 import os
 from webapp2 import RequestHandler
 from webapp2 import WSGIApplication
@@ -13,7 +14,12 @@ class MainHandler(RequestHandler):
 
 class Dashboard(RequestHandler):
   def get(self):
-    pass
+    self.response.headers['Content-Type'] = 'application/json'
+    obj = {
+      'success': 'some var',
+      'payload': 'some var',
+    }
+    self.response.out.write(json.dumps(obj))
 
 app = WSGIApplication([
   ('/', MainHandler),
