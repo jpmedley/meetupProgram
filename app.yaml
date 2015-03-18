@@ -5,6 +5,16 @@ api_version: 1
 threadsafe: yes
 
 handlers:
+- url: /(.*\.html)
+  static_files: static/\1
+  upload: static/(.*\.html)
+
+- url: /(.*\.js)
+  static_files: scripts/\1
+  upload: scripts/(.*\.js)
+  http_headers:
+    Content-Type: application/javascript
+
 - url: .*
   script: main.app
   login: optional
