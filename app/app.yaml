@@ -8,6 +8,22 @@ handlers:
 - url: /(.*\.html)
   static_files: static/\1
   upload: static/(.*\.html)
+  
+- url: /(icons.*)
+  static_files: images/icons/\1
+  upload: images/icons/(icons.*)
+  
+- url: /(placeholder.*)
+  static_files: images/icons/\1
+  upload: images/icons/(placeholder.*)
+  
+- url: /(.*\.(eot|ttf|woff))
+  static_files: fonts/\1
+  upload: static/(.*\.(eot|ttf|woff))
+  
+- url: /(.*\.png)
+  static_files: images/touch/\1
+  upload: images/touch/(.*\.png)
 
 - url: /(.*\.js)
   static_files: scripts/\1
