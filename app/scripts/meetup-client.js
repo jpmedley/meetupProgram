@@ -3,7 +3,7 @@ function afterInstall(registration) {
 }
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./meetup-worker.js', {scope: './'})
+  navigator.serviceWorker.register('/meetup-worker.js')
     .then(afterInstall)
     .catch(function(error) {
       //Corrective action.

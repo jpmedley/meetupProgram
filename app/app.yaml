@@ -25,6 +25,12 @@ handlers:
   static_files: images/touch/\1
   upload: images/touch/(.*\.png)
 
+- url: /(meetup-worker.js)
+  static_files: ./\1
+  upload: /(meetup-worker.js)
+  http_headers:
+    Content-Type: application/javascript
+
 - url: /(.*\.js)
   static_files: scripts/\1
   upload: scripts/(.*\.js)
